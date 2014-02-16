@@ -1,5 +1,7 @@
 package oving6;
 
+import java.util.ArrayList;
+
 public class Person {
 	
 	private String givenName;
@@ -48,6 +50,19 @@ public class Person {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+	
+	@Override public String toString() {
+		return this.getClass().getSimpleName() + ":\n" + givenName + " " + surname + "\n"
+				+ address.toString();
+	}
+	
+	public static void printNames(ArrayList<Person> personer) {
+		for(Person e : personer) System.out.println(e.getSurname() + ", " + e.getGivenName());
+	}
+	
+	public static void printAll(ArrayList<Person> personer) {
+		for(Person e : personer) System.out.println(e);
 	}
 
 }

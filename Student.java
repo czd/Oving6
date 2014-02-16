@@ -11,8 +11,9 @@ public class Student extends Person {
 		grade = 0;
 	}
 	
-	public Student(String givenName, String surname, Address address, String major, int grade) {
-		super(givenName, surname, address);
+	public Student(String givenName, String surname, String street,
+			int houseNr, int postCode, String city, String major, int grade) {
+		super(givenName, surname, street, houseNr, postCode, city);
 		this.major = major;
 		this.grade = grade;
 	}
@@ -31,6 +32,10 @@ public class Student extends Person {
 
 	public void setGrade(int grade) {
 		this.grade = grade;
+	}
+	
+	@Override public String toString() {
+		return super.toString() + "\n" + major + " " + grade;
 	}
 
 }
